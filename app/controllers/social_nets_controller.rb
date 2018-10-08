@@ -20,7 +20,7 @@ module  Apisn
         @social_net = SocialNet.new(social_net_params)
     
         if @social_net.save
-          render json: @social_net, status: :created, location: @social_net
+          render json: @social_net, status: :created, respond_with: @social_net
         else
           render json: @social_net.errors, status: :unprocessable_entity
         end

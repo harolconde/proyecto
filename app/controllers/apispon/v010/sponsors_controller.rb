@@ -20,7 +20,7 @@ module Apispon
         @sponsor = Sponsor.new(sponsor_params)
     
         if @sponsor.save
-          render json: @sponsor, status: :created, location: @sponsor
+          render json: @sponsor, status: :created, respond_with: @sponsor
         else
           render json: @sponsor.errors, status: :unprocessable_entity
         end

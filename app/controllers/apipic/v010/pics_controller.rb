@@ -20,7 +20,7 @@ module Apipic
         @pic = Pic.new(pic_params)
     
         if @pic.save
-          render json: @pic, status: :created, location: @pic
+          render json: @pic, status: :created, respond_with: @pic
         else
           render json: @pic.errors, status: :unprocessable_entity
         end

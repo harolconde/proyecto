@@ -20,7 +20,7 @@ module Apitip
         @tip = Tip.new(tip_params)
     
         if @tip.save
-          render json: @tip, status: :created, location: @tip
+          render json: @tip, status: :created, respond_with: @tip
         else
           render json: @tip.errors, status: :unprocessable_entity
         end

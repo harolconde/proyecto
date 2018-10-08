@@ -20,7 +20,7 @@ module Apipri
         @prize = Prize.new(prize_params)
     
         if @prize.save
-          render json: @prize, status: :created, location: @prize
+          render json: @prize, status: :created, respond_with: @prize
         else
           render json: @prize.errors, status: :unprocessable_entity
         end

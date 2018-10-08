@@ -20,7 +20,7 @@ module Apiad
         @admin = Admin.new(admin_params)
     
         if @admin.save
-          render json: @admin, status: :created, location: @admin
+          render json: @admin, status: :created, respond_with: @admin
         else
           render json: @admin.errors, status: :unprocessable_entity
         end

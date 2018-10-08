@@ -20,7 +20,7 @@ module User
         @usuario = Usuario.new(usuario_params)
     
         if @usuario.save
-          render json: @usuario, status: :created, location: @usuario
+          render json: @usuario, status: :created, respond_with: @usuario
         else
           render json: @usuario.errors, status: :unprocessable_entity
         end

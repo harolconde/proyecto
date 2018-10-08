@@ -20,7 +20,7 @@ module Apihash
         @hashtag = Hashtag.new(hashtag_params)
     
         if @hashtag.save
-          render json: @hashtag, status: :created, location: @hashtag
+          render json: @hashtag, status: :created, respond_with: @hashtag
         else
           render json: @hashtag.errors, status: :unprocessable_entity
         end
